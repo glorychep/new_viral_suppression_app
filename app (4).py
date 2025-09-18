@@ -2,16 +2,6 @@
 import joblib
 import pandas as pd
 import streamlit as st
-
-
-# Auto-install helper
-def install_if_missing(package):
-    try:
-        __import__(package)
-    except ImportError:
-        print(f"⚠️ {package} not found. Installing...")
-        subprocess.check_call([sys.executable, "-m", "pip", "install", package])
-
 # Ensure required packages
 for pkg in ["joblib", "pandas", "scikit-learn", "streamlit"]:
     install_if_missing(pkg)
