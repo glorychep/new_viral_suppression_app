@@ -9,6 +9,16 @@ for pkg in ["joblib", "pandas", "scikit-learn", "streamlit"]:
 import joblib
 import pandas as pd
 import streamlit as st
+import subprocess
+import sys
+
+# Install joblib if missing
+try:
+    import joblib
+except ModuleNotFoundError:
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "joblib"])
+    import joblib
+
 
 # Load the model
 try:
